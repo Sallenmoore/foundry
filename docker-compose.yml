@@ -1,0 +1,15 @@
+---
+version: "3.8"
+
+services:
+  foundry:
+    image: foundry:latest
+    build:
+      context: . 
+    hostname: foundry
+    container_name: foundry
+    restart: unless-stopped
+    volumes:
+      - ./data:/opt/data/foundryvtt
+    ports:
+      - "30000:30000"
